@@ -46,21 +46,21 @@
             <div class="ui-g-12" id="username">
                 <p:outputLabel class="label" for="float-input" value="Email" />
                 <br></br>
-                <p:inputText class="inputText" id="float-input" value="Email" />
+                <p:inputText class="inputText" id="float-input" value="#{registerController.email}" />
             </div>
             <div class="ui-g-12" id="username">
-                <p:outputLabel class="label" for="float-input" value="Name" />
+                <p:outputLabel class="label" for="float-input" value="Username" />
                 <br></br>
-                <p:inputText class="inputText" id="float-input" value="Name" />
+                <p:inputText class="inputText" id="float-input" value="#{registerController.username}" />
             </div>
             <div class="ui-g-12" id="password">
                 <p:outputLabel class="label" for="float-input" value="Password" />
                 <br></br>
-                <p:password style="width:80%" id="pwd1" value="#{passwordView.password5}" label="Password" required="true" />
+                <p:password style="width:80%" id="pwd1" value="#{registerController.password}" label="Password" required="true"  />
             </div>
             <div class="ui-g-12" id="submitButton">
                 <br></br>
-                <p:outputLabel class="btn" value="Sign up"></p:outputLabel>
+                <p:outputLabel class="btn" value="Sign up" onclick="#{registerController.registrar}"></p:outputLabel>
             </div>
         </div>
     </h:body>

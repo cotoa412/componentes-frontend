@@ -45,14 +45,15 @@
             
             <div class="ui-g-12" id="username">
                 <p:outputLabel class="label" for="float-input" value="Username" />
-                <p:inputText class="inputText" id="float-input" value="Username" />
+                <p:inputText class="inputText" id="float-input" value="#{loginController.username}" />
             </div>
             <div class="ui-g-12" id="password">
                 <p:outputLabel class="label" for="float-input" value="Password" />
-                <p:inputText class="inputText" id="float-input" value="Password" />
+                <p:inputText class="inputText" id="float-input" value="#{loginController.password}" />
             </div>
             <div class="ui-g-12" id="submitButton">
-                <p:outputLabel class="btn" value="Submit"></p:outputLabel>
+                <p:outputLabel class="btn" value="Submit" onclick="#{loginController.login()}"> </p:outputLabel>
+                
             </div>
         </div>
     </h:body>
