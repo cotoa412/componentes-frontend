@@ -40,19 +40,27 @@
         <div class="mainForm">
             
             <div class="ui-g-12" id="title">
-                <h1 class="label" style="font-family:Arial">Trabajo Final Componentes</h1>
+                <h1 class="label" style="font-family:Arial">Registrar</h1>
             </div>
             
             <div class="ui-g-12" id="username">
-                <p:outputLabel class="label" for="float-input" value="Username" />
-                <p:inputText class="inputText" id="float-input" value="Username" />
+                <p:outputLabel class="label" for="float-input" value="Email" />
+                <br></br>
+                <p:inputText class="inputText" id="float-input" value="Email" />
+            </div>
+            <div class="ui-g-12" id="username">
+                <p:outputLabel class="label" for="float-input" value="Name" />
+                <br></br>
+                <p:inputText class="inputText" id="float-input" value="Name" />
             </div>
             <div class="ui-g-12" id="password">
                 <p:outputLabel class="label" for="float-input" value="Password" />
-                <p:inputText class="inputText" id="float-input" value="Password" />
+                <br></br>
+                <p:password style="width:80%" id="pwd1" value="#{passwordView.password5}" label="Password" required="true" />
             </div>
             <div class="ui-g-12" id="submitButton">
-                <p:outputLabel class="btn" value="Submit"></p:outputLabel>
+                <br></br>
+                <p:outputLabel class="btn" value="Sign up"></p:outputLabel>
             </div>
         </div>
     </h:body>
