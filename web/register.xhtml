@@ -37,32 +37,25 @@
                 color:white;
             }
         </style>
-        <div class="mainForm">
+        <h:form style="margin: 350px auto; width: 50%; align-items: center; text-align: left;">
             
-            <div class="ui-g-12" id="title">
-                <h1 class="label" style="font-family:Arial">Registrar</h1>
-            </div>
+                <h1 style="font-weight: bold; width: 100%; color: white; text-align: left; margin-left: 240px " >Registro al sistema</h1>
+                <br></br>
             
-            <div class="ui-g-12" id="username">
-                <p:outputLabel class="label" for="float-input" value="Email" />
-                <br></br>
-                <p:inputText class="inputText" id="float-input" value="#{registerController.email}" />
-            </div>
-            <div class="ui-g-12" id="username">
-                <p:outputLabel class="label" for="float-input" value="Username" />
-                <br></br>
-                <p:inputText class="inputText" id="float-input" value="#{registerController.username}" />
-            </div>
-            <div class="ui-g-12" id="password">
-                <p:outputLabel class="label" for="float-input" value="Password" />
-                <br></br>
-                <p:password style="width:80%" id="pwd1" value="#{registerController.password}" label="Password" required="true"  />
-            </div>
-            <div class="ui-g-12" id="submitButton">
-                <br></br>
-                <p:outputLabel class="btn" value="Sign up" onclick="#{registerController.registrar}"></p:outputLabel>
-            </div>
-        </div>
+            <h:panelGrid columns="1" style="width: 50%; margin: 0 auto" cellpadding="5">
+                <p:outputLabel class="label" for="float-input" value="Usuario: " />
+                <p:inputText class="inputText" id="float-input" value="#{registroController.username}" placeholder="Usuario: "/>
+                <p:outputLabel class="label" for="float-input2" value="Correo: " />
+                <p:inputText class="inputText" id="float-input2" value="#{registroController.email}" placeholder="Correo: "/>
+                <p:outputLabel class="label" for="float-input3" value="Contraseña: " />
+                <p:password class="inputText" id="float-input3" value="#{registroController.password}" required="true" match="repetir" placeholder="Contraseña: "/>
+                <p:outputLabel class="label" for="repetir" value="Repetir Contraseña: "/>
+                <p:password class="inputText" id="repetir" required="true" placeholder="Repetir Contraseña:"/>                
+                <h:panelGrid columns="1" style="margin: -20px auto;width: 100%; display: flex; justify-content: flex-start; align-items: center;" cellpadding="2">
+                    <p:commandButton class="btn" style="margin: 20px 0 20px 0;" value="Registrar" onclick="#{registrarController.registrar()}"/>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:form>
     </h:body>
 </html>
 

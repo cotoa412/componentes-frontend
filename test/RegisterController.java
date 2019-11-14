@@ -8,17 +8,24 @@ import com.componentes.entidades.Usuario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 /**
  *
  * @author Kainthel
  */
+@ManagedBean (name = "registroController")
+@SessionScoped
 public class RegisterController {
     private String email;
     private String username;
     private String password;
     private Usuario user = new Usuario();
+
+    public RegisterController() {
+    }
     
         public String registrar(){
      
