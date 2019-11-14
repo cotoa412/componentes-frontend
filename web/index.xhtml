@@ -31,31 +31,27 @@
                 border-color: white;
                 padding: 6px;
                 padding-right: 8px;
-                margin: 2px;
+                margin-top: 20px;
                 border-radius:5px;
                 font-size: 20px;
                 color:white;
             }
         </style>
-        <div class="mainForm">
+        <h:form style="margin: auto auto; width: 50%; align-items: center; justify-content: space-between; text-align: center; margin-top: 350px;">
             
-            <div class="ui-g-12" id="title">
-                <h1 class="label" style="font-family:Arial">Trabajo Final Componentes</h1>
-            </div>
+                <h1 style="font-weight: bold; width: 100%;" >Ingreso al sistema</h1>
+                <br></br>
             
-            <div class="ui-g-12" id="username">
-                <p:outputLabel class="label" for="float-input" value="Username" />
+            <h:panelGrid columns="2" style="width: 50%; margin: 0 auto" cellpadding="5">
+                <p:outputLabel class="label" for="float-input" value="Usuario: " />
                 <p:inputText class="inputText" id="float-input" value="#{loginController.username}" />
-            </div>
-            <div class="ui-g-12" id="password">
-                <p:outputLabel class="label" for="float-input" value="Password" />
-                <p:inputText class="inputText" id="float-input" value="#{loginController.password}" />
-            </div>
-            <div class="ui-g-12" id="submitButton">
-                <p:outputLabel class="btn" value="Submit" onclick="#{loginController.login()}"> </p:outputLabel>
-                
-            </div>
-        </div>
+                <p:outputLabel class="label" for="float-input2" value="Contraseña: " />
+                <p:inputText class="inputText" id="float-input2" value="#{loginController.password}" />
+                <h:panelGrid columns="1" style="margin: -20px auto;" cellpadding="2">
+                <p:commandButton class="btn" value="Ingresar" onclick="#{loginController.login()}"/>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:form>
     </h:body>
 </html>
 
