@@ -5,6 +5,8 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Ingreso</title>
+    </h:head>
+    <h:body>
         <style>
             .mainForm {
                 margin: auto;
@@ -14,9 +16,6 @@
             }
             body {
                 background-color: #4c00a4;
-                margin: 0 ;
-                height: 100%;
-                width: 100%
             }
             .label {
                 margin: 2px;
@@ -32,30 +31,31 @@
                 border-color: white;
                 padding: 6px;
                 padding-right: 8px;
-                margin-top: 20px;
+                margin: 2px;
                 border-radius:5px;
                 font-size: 20px;
                 color:white;
             }
         </style>
-    </h:head>
-    <h:body>
-        
-        <h:form style="margin: 350px auto; width: 50%; align-items: center; text-align: left;">
+        <div class="mainForm">
             
-                <h1 style="font-weight: bold; width: 100%; color: white; text-align: center" >Ingreso al sistema</h1>
-                <br></br>
+            <div class="ui-g-12" id="title">
+                <h1 class="label" style="font-family:Arial">Trabajo Final Componentes</h1>
+            </div>
             
-            <h:panelGrid columns="2" style="width: 50%; margin: 0 auto" cellpadding="5">
-                <p:outputLabel class="label" for="float-input" value="Usuario: " />
+            <div class="ui-g-12" id="username">
+                <p:outputLabel class="label" for="float-input" value="Username" />
                 <p:inputText class="inputText" id="float-input" value="#{loginController.username}" />
-                <p:outputLabel class="label" for="float-input2" value="Contraseña: " />
-                <p:inputText class="inputText" id="float-input2" value="#{loginController.password}" />
-                <h:panelGrid columns="1" style="margin: -20px auto;width: 100%; display: flex; justify-content: flex-start; align-items: center;" cellpadding="2">
-                    <p:commandButton class="btn" style="margin: 20px 0 20px 0;" value="Ingresar" onclick="#{loginController.login()}"/>
-                </h:panelGrid>
-            </h:panelGrid>
-        </h:form>
+            </div>
+            <div class="ui-g-12" id="password">
+                <p:outputLabel class="label" for="float-input" value="Password" />
+                <p:inputText class="inputText" id="float-input" value="#{loginController.password}" />
+            </div>
+            <div class="ui-g-12" id="submitButton">
+                <p:outputLabel class="btn" value="Submit" onclick="#{loginController.login()}"> </p:outputLabel>
+                
+            </div>
+        </div>
     </h:body>
 </html>
 

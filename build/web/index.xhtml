@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Ingreso</title>
+    </h:head>
+    <h:body>
+        <style>
+            .mainForm {
+                margin: auto;
+                width: 30%;
+                padding: 150px 0;
+                padding-left: 100px;
+            }
+            body {
+                background-color: #4c00a4;
+            }
+            .label {
+                margin: 2px;
+                color: white;
+            }
+            .inputText{
+                width: 80%;
+            }
+            .btn {
+                background-color: #4c00a4; 
+                border-style: solid;
+                border-width: 2px;
+                border-color: white;
+                padding: 6px;
+                padding-right: 8px;
+                margin: 2px;
+                border-radius:5px;
+                font-size: 20px;
+                color:white;
+            }
+        </style>
+        <div class="mainForm">
+            
+            <div class="ui-g-12" id="title">
+                <h1 class="label" style="font-family:Arial">Trabajo Final Componentes</h1>
+            </div>
+            
+            <div class="ui-g-12" id="username">
+                <p:outputLabel class="label" for="float-input" value="Username" />
+                <p:inputText class="inputText" id="float-input" value="#{loginController.username}" />
+            </div>
+            <div class="ui-g-12" id="password">
+                <p:outputLabel class="label" for="float-input" value="Password" />
+                <p:inputText class="inputText" id="float-input" value="#{loginController.password}" />
+            </div>
+            <div class="ui-g-12" id="submitButton">
+                <p:outputLabel class="btn" value="Submit" onclick="#{loginController.login()}"> </p:outputLabel>
+                
+            </div>
+        </div>
+    </h:body>
+</html>
+

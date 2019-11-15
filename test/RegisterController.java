@@ -8,24 +8,17 @@ import com.componentes.entidades.Usuario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 /**
  *
  * @author Kainthel
  */
-@ManagedBean (name = "registroController")
-@SessionScoped
 public class RegisterController {
     private String email;
     private String username;
     private String password;
     private Usuario user = new Usuario();
-
-    public RegisterController() {
-    }
     
         public String registrar(){
      
@@ -35,7 +28,7 @@ public class RegisterController {
             
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Se debe llenar todos los campos.");
             FacesContext.getCurrentInstance().addMessage(null, msg);
-        
+        /*
         }else if(this.comprobarNombreUsuario(this.username) == true){
         
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "El nombre de usuario no esta disponible.");
@@ -45,7 +38,7 @@ public class RegisterController {
         
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "El correo electrónico no esta disponible.");
             FacesContext.getCurrentInstance().addMessage(null, msg);
-            
+           */ 
         }else{
             
             
@@ -95,7 +88,7 @@ public class RegisterController {
         return comprobar;
     }
     
-    
+    /*
     public boolean comprobarNombreUsuario(String username){
         
         boolean comprob = false;
@@ -130,6 +123,6 @@ public class RegisterController {
         
         return comprob;
     }
-     
+     */
 }
 

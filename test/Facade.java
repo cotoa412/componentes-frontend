@@ -1,6 +1,8 @@
 
 import com.componentes.controlador.UsuarioController;
 import com.componentes.entidades.Usuario;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,7 +23,6 @@ public class Facade {
         u.setConstrania(password);
         UsuarioController uc = new UsuarioController();
         
-        
     }
     
     public void registrar(String nombre, String correo, String password){
@@ -34,5 +35,6 @@ public class Facade {
         uc.Insert(u);
         
     }
+  
     
 }

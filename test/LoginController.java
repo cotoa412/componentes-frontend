@@ -4,20 +4,16 @@
  * and open the template in the editor.
  */
 
-import com.componentes.controlador.UsuarioController;
+import com.componentes.dao.UsuarioDAO;
 import com.componentes.entidades.Usuario;
 import java.io.IOException;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 /**
  *
  * @author Kainthel
  */
-@ManagedBean (name = "loginController")
-@SessionScoped
 public class LoginController {
     
     //Parametros para el usuario
@@ -27,9 +23,18 @@ public class LoginController {
 
     public void login(){
         
-        UsuarioController uc = new UsuarioController();
+        UsuarioDAO ud = new UsuarioDAO();
         //Busca si el username y password esta en la database
-        for (Object obj : uc.Get()) {
+       
+        if ((((Usuario)ud.getUsuario(1,user)).getNombre().equals(username)) && (((Usuario)ud.getUsuario(1,user)).getConstrania().equals(password))) { 
+                user = (Usuario)ud.getUsuario(1,user);
+                this.redireccionALandingPage(user); //si es valido el user lo manda a meterse al landing page
+            }else{ //en caso de login fallido, usuario invalido, etc...
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Usuario o contraseña incorrecta.");
+                FacesContext.getCurrentInstance().addMessage(null, msg);
+                    
+        /*
+        for (Object obj : uc.GetList) {
             if (((Usuario)obj).getNombre().equals(username) && ((Usuario)obj).getConstrania().equals(password)) { 
                 user = ((Usuario)obj);
                 this.redireccionALandingPage(user); //si es valido el user lo manda a meterse al landing page
@@ -37,8 +42,9 @@ public class LoginController {
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Usuario o contraseña incorrecta.");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
             }
-        }  
+        } */  
     }
+}
     
      public void redireccionALandingPage(Usuario u){
                     try {
@@ -50,7 +56,7 @@ public class LoginController {
                     .getExternalContext()
                     .redirect(
                             request.getContextPath()
-                            + "/faces/landingPage.xhtml?faces-redirect=true");  //Aqui deberia ir a la Landing Page pero pues aun no existe
+                            + "/faces/landingPage.xhtml?faces-redirect=true"); 
             }
                     catch (IOException e) {
                     }
